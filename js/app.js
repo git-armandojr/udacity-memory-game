@@ -90,7 +90,11 @@ function flip(element){
 }
 
 async function error(element){
+    console.log(element);
+
     $(element).toggleClass('error card').toggleClass('card');
+
+    $(element).effect('shake');
 
     await sleep(1000);
     
