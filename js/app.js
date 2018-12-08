@@ -77,7 +77,7 @@ let openings = []; // a *list* of "open" cards by id
 let clicks = 0;
 let moves = 0;
 
-$('.moves').html(moves);
+$('.moves').html(moves); // reset moves
 
 // the sleep function works only with an asynchronous function
 // https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
@@ -89,6 +89,14 @@ function flip(element){
     $(element).toggleClass('open show card').toggleClass('card');
 }
 
+async function error(element){
+    $(element).toggleClass('error card').toggleClass('card');
+
+    await sleep(1000);
+    
+    $(element).toggleClass('error card').toggleClass('card');    
+}
+
 async function match(){
     
     $('#'+ openings[0]).toggleClass('match card').toggleClass('card');
@@ -98,6 +106,9 @@ async function match(){
 }
 
 async function notFound(){
+
+    error('#'+ openings[0]);
+    error('#'+ openings[1]);
 
     await sleep(1000);    
 

@@ -81,6 +81,12 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card.error {
+    --animation: shake 0.3s;
+    --animation-iteration-count: 3;
+    background: #FF4500;
+}
+
 /*
  * Styles for the Score Panel
  */
@@ -106,4 +112,12 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+@keyframes shake {
+    0% {margin-left: 0;}
+    25% {margin-left: 5px;}
+    50% {margin-left: 0;}
+    75% {margin-left: -5px;}
+    100% {margin-left: 0;}
 }
