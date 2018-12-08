@@ -1,7 +1,25 @@
 /*
  * Create a list that holds all of your cards
  */
-
+const array = 
+    [
+        'fa-anchor',
+        'fa-anchor',
+        'fa-bicycle',
+        'fa-bicycle',
+        'fa-bolt',
+        'fa-bolt',
+        'fa-bomb',
+        'fa-bomb',
+        'fa-cube',
+        'fa-cube',
+        'fa-diamond',
+        'fa-diamond',
+        'fa-leaf',
+        'fa-leaf',
+        'fa-paper-plane-o',
+        'fa-paper-plane-o'
+    ];
 
 /*
  * Display the cards on the page
@@ -25,6 +43,8 @@ function shuffle(array) {
     return array;
 }
 
+console.log(shuffle(array));
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -38,5 +58,6 @@ function shuffle(array) {
  */
 
 $('.deck').on('click', 'li', function(){
-    $(this).toggleClass('card open show');
-})
+    $(this).toggleClass('card open show').toggleClass('card');
+});
+
