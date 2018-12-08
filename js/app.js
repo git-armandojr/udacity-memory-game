@@ -43,7 +43,8 @@ function shuffle(array) {
     return array;
 }
 
-console.log(shuffle(array));
+let shuffled = shuffle(array);
+console.log(shuffled);
 
 
 /*
