@@ -59,7 +59,6 @@ $.each(shuffled, function(index, value){
     //console.log(htmlString);
 });
 
-
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -71,7 +70,13 @@ $.each(shuffled, function(index, value){
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-$('.deck').on('click', 'li', function(){
-    $(this).toggleClass('card open show').toggleClass('card');
-});
+let clicks = 0;
 
+$('.deck').on('click', 'li', function(){
+    clicks++;
+
+    // limits opening of only two cards
+    if(clicks <= 2) {
+        $(this).toggleClass('card open show').toggleClass('card');
+    }
+});
