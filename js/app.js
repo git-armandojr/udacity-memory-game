@@ -75,6 +75,9 @@ $.each(shuffled, function(index, value){
 let pair = []; // a *list* of "open" cards by value for comparison
 let openings = []; // a *list* of "open" cards by id
 let clicks = 0;
+let moves = 0;
+
+$('.moves').html(moves);
 
 // the sleep function works only with an asynchronous function
 // https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
@@ -87,9 +90,6 @@ function flip(element){
 }
 
 async function match(){
-    console.log('First: ' + pair[0] + ' id: ' + openings[0]);
-    console.log('Second: ' + pair[1] + ' id: ' + openings[1]);
-    console.log('EQUALS');
     
     $('#'+ openings[0]).toggleClass('match card').toggleClass('card');
     $('#'+ openings[1]).toggleClass('match card').toggleClass('card');
@@ -98,9 +98,6 @@ async function match(){
 }
 
 async function notFound(){
-    console.log('First: ' + pair[0] + ' id: ' + openings[0]);
-    console.log('Second: ' + pair[1] + ' id: ' + openings[1]);
-    console.log('DIFFERENT');
 
     await sleep(1000);    
 
@@ -112,9 +109,7 @@ async function notFound(){
 
 $('.deck').on('click', 'li', function(){
 
-    console.log(clicks);
-
-    // limits opening of only two cards
+    // limits the opening of only two cards at a time
     if(clicks < 2 && $(this).attr('class') != 'open show card') {
         
         openings[clicks] = $(this).attr('id');
@@ -131,6 +126,10 @@ $('.deck').on('click', 'li', function(){
             if(pair[0] != pair[1]){
                 notFound();
             }
+
+            moves++;
+
+            $('.moves').html(moves);
         }
         
         clicks++;
