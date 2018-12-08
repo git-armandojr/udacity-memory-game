@@ -43,8 +43,20 @@ function shuffle(array) {
     return array;
 }
 
+// - shuffle the list of cards using the provided "shuffle" method below
 let shuffled = shuffle(array);
 console.log(shuffled);
+
+const deck = "<ul class='deck'></ul>";
+
+$('.score-panel').after(deck);
+
+// - loop through each card and create its HTML
+
+$.each(shuffled, function(index, value){
+    let htmlString = "<li class='card'><i class='fa " + value + "></i></li>";
+    console.log(htmlString);
+});
 
 
 /*
