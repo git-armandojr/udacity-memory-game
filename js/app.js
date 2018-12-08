@@ -103,8 +103,8 @@ async function error(element){
 
 async function match(){
     
-    $('#'+ openings[0]).toggleClass('match card').toggleClass('card');
-    $('#'+ openings[1]).toggleClass('match card').toggleClass('card');
+    $('#'+ openings[0]).toggleClass('match card').toggleClass('card').effect('highlight');
+    $('#'+ openings[1]).toggleClass('match card').toggleClass('card').effect('highlight');
 
     clicks = -1;
 }
@@ -125,7 +125,7 @@ async function notFound(){
 $('.deck').on('click', 'li', function(){
 
     // limits the opening of only two cards at a time
-    if(clicks < 2 && $(this).attr('class') != 'open show card' && $(this).attr('class') != 'open show card') {
+    if(clicks < 2 && $(this).attr('class') != 'open show card' && $(this).attr('class') != 'open show match card') {
         
         openings[clicks] = $(this).attr('id');
 
