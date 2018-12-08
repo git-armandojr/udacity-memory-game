@@ -121,7 +121,7 @@ async function notFound(){
 $('.deck').on('click', 'li', function(){
 
     // limits the opening of only two cards at a time
-    if(clicks < 2 && $(this).attr('class') != 'open show card') {
+    if(clicks < 2 && $(this).attr('class') != 'open show card' && $(this).attr('class') != 'open show card') {
         
         openings[clicks] = $(this).attr('id');
 
