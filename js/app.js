@@ -47,15 +47,16 @@ function shuffle(array) {
 let shuffled = shuffle(array);
 console.log(shuffled);
 
+// cleaned "table"
 const deck = "<ul class='deck'></ul>";
-
 $('.score-panel').after(deck);
 
 // - loop through each card and create its HTML
-
 $.each(shuffled, function(index, value){
-    let htmlString = "<li class='card'><i class='fa " + value + "></i></li>";
-    console.log(htmlString);
+    let htmlString = "<li class='card'><i class='fa " + value + "'></i></li>";
+    // - add each card's HTML to the page
+    $('.deck').append(htmlString);
+    //console.log(htmlString);
 });
 
 
