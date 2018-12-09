@@ -143,6 +143,7 @@ $('.deck').on('click', 'li', function(){
 
                 if(pairFounds === shuffled.length/2){
                     console.log('CONGRATS');
+                    $('#myModal').modal('show');
                 }
             }
 
