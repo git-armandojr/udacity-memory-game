@@ -155,6 +155,21 @@ $('.deck').on('click', 'li', function(){
             moves++;
 
             $('.moves').html(moves);
+
+            if(moves == 10){
+                $(".stars").children().children().last().removeClass().addClass('fa').addClass('fa-star-o');
+                stars--;
+            }
+
+            if(moves == 15){
+                $(".stars").children().next().children().removeClass().addClass('fa').addClass('fa-star-o');
+                stars--;
+            }
+
+            if(moves == 18){
+                $(".stars").children().children().removeClass().addClass('fa').addClass('fa-star-o');
+                stars--;
+            }
         }
         
         clicks++;
