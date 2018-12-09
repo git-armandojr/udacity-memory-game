@@ -92,7 +92,7 @@ function flip(element){
 }
 
 async function error(element){
-    console.log(element);
+    //console.log(element);
 
     $(element).toggleClass('error card').toggleClass('card');
 
@@ -124,6 +124,20 @@ async function notFound(){
     clicks = 0;
 }
 
+let seconds = 0;
+
+function timer() {
+    $('.timer').html(seconds++);
+    setTimeout("timer()", 1000);
+
+    if(seconds == 60){
+        $('#failed').modal('show');
+    }
+}
+
+$(document).ready(timer());
+
+
 $('.deck').on('click', 'li', function(){
 
     // limits the opening of only two cards at a time
@@ -142,8 +156,8 @@ $('.deck').on('click', 'li', function(){
                 pairFounds++;
 
                 if(pairFounds === shuffled.length/2){
-                    $('#myModal').modal('show');
-                    $('.info').html(`With ${moves} Moves and ${stars} Stars <br>Wooooooo!`);
+                    $('#congrats').modal('show');
+                    $('.info').html(`With ${moves} moves, in ${seconds} seconds and ${stars} stars <br>Wooooooo!`);
                 }
             }
 
