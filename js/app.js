@@ -142,7 +142,6 @@ $('.deck').on('click', 'li', function(){
                 pairFounds++;
 
                 if(pairFounds === shuffled.length/2){
-                    console.log('CONGRATS');
                     $('#myModal').modal('show');
                     $('.info').html(`With ${moves} Moves and ${stars} Stars <br>Wooooooo!`);
                 }
@@ -177,3 +176,5 @@ $('.deck').on('click', 'li', function(){
 });
 
 $('.again').click(function(){ window.location = 'index.html'});
+
+$('.restart').click(function(){ window.location = 'index.html'});
