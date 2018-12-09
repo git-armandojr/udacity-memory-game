@@ -91,7 +91,7 @@ h1 {
 
 .score-panel {
     text-align: left;
-    width: 660px;
+    width: 320px;
     margin-bottom: 10px;
 }
 
@@ -109,7 +109,7 @@ h1 {
 
 .score-panel .timer {
     display: inline-block;
-    margin: 0 5px 0 192px;
+    margin: 0 5px 0 28px;
 }
 
 .score-panel .restart {
@@ -126,4 +126,16 @@ h1 {
     height: 100%;
     min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
+}
+
+@media screen and (max-width: 360px) {
+    .deck {
+        width: 340px;
+        min-height: 350px;
+    }
+
+    .deck .card {
+        height: 65px;
+        width: 65px;
+    }
 }
