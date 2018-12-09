@@ -76,6 +76,8 @@ let pair = []; // a *list* of "open" cards by value for comparison
 let openings = []; // a *list* of "open" cards by id
 let clicks = 0;
 let moves = 0;
+let stars = 3;
+let pairFounds = 0;
 
 $('.moves').html(moves); // reset moves
 
@@ -136,6 +138,12 @@ $('.deck').on('click', 'li', function(){
         if(pair.length == 2 && clicks == 1) {
             if(pair[0] == pair[1]){
                 match();
+
+                pairFounds++;
+
+                if(pairFounds === shuffled.length/2){
+                    console.log('CONGRATS');
+                }
             }
 
             if(pair[0] != pair[1]){
@@ -150,3 +158,5 @@ $('.deck').on('click', 'li', function(){
         clicks++;
     }
 });
+
+$('.again').click(function(){ window.location = 'index.html'});
