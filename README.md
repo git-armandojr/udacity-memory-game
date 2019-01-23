@@ -21,4 +21,4 @@ For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Demo
 
-link:[https://git-armandojr.github.io/index.html](#memory-game).
+link: [memory-game](https://git-armandojr.github.io/index.html).
